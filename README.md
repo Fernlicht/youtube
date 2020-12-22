@@ -19,3 +19,6 @@
 1. Remove the whole content after <<VideoID	URL	"Title"	"Channel">>.
 1. Close VideoViews.tsv in the IDE / editor (its getting big and will be updated many times).
 1. Run ./updateVideoViews.sh. It takes around 30 min to complete.
+1. Open VideoViews.xlsx.
+1. Import VideoViews.tsv configuring "Tabalutor" as separator. Configure the first column as "Text" instead of "Standard".
+1. Rename the imported tab as YYYYMMDD.
