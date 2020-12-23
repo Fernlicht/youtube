@@ -22,3 +22,42 @@
 1. Open VideoViews.xlsx.
 1. Import VideoViews.tsv configuring "Tabalutor" as separator. Configure the first column as "Text" instead of "Standard".
 1. Rename the imported tab as YYYYMMDD.
+
+# Data flow
+
+## Input files
+| **File**             | **Description** |
+| -------------        | ------------- |
+| channelIDs.txt       | YouTube channel IDs of the tracked channels.
+| channelsByName.txt   | Legacy YouTube channel names instead of IDs.
+| toBeAdded.txt        | Channel IDs to be added to the tracking.
+
+## Output files
+**File**             | **Description**
+-------------        | -------------
+ChannelViews.csv       |
+Subscribers.csv        |
+VideoViews.tsv         |
+
+## Intermediate files
+**File**             | **Description**
+-------------        | -------------
+playlistIds.txt      |
+channelParams.txt    |
+
+## Scripts
+### extractChannelParam.sh
+* <- channelIDs.txt
+* <- channelsByName.txt
+* -> channelParams.txt (new)
+* -> playlistIds.txt (new)
+* -> ChannelViews.csv (new)
+
+### updateStats.sh
+* <- channelParams.txt
+* -> ChannelViews.csv
+* -> Subscribers.csv
+
+### updateVideoViews.sh
+* <- playlistIds.txt
+* -> VideoViews.csv
