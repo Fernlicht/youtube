@@ -15,12 +15,9 @@
 4. Update the Pivot table in tab SubsCh.
 
 ## Get video views
-1. Make a backup of VideoViews.tsv.
-1. Remove the whole content after <<VideoID	URL	"Title"	"Channel">>, but add a carriage return.
-1. Close VideoViews.tsv in the IDE / editor (its getting big and will be updated many times).
 1. Run ./updateVideoViews.sh. It takes around 30 min to complete.
-1. Open VideoViews.xlsx.
-1. Import VideoViews.tsv configuring "Tabalutor" as separator. Configure the first column as "Text" instead of "Standard".
+1. Open Excel/VideoViews.xlsx.
+1. Import VideoViews/VideoViews_YYYYMMDD.tsv configuring "Tabalutor" as separator. Configure the first column as "Text" instead of "Standard".
 1. Rename the imported tab as YYYYMMDD.
 
 # Data flow
